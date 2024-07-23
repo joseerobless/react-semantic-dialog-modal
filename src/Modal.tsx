@@ -135,7 +135,7 @@ export const Modal: FC<ModalProps> = ({
     if (isClosing) return;
     setIsClosing(true);
     onClose?.();
-    enableAnimation ? setClosingAnimationStyle() : dialogRef.current?.close();
+    enableAnimation ? setClosingAnimationStyle() : dialogRef.current?.close(), setIsClosing(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -153,6 +153,21 @@ export const Modal: FC<ModalProps> = ({
       openModal();
     }
   }, [open]);
+
+  useEffect(() => {
+    const unsetAnimationStyles = () => {
+      document.documentElement.style.setProperty("--modal-slide-in-distance-x", null);
+      document.documentElement.style.setProperty("--modal-slide-in-distance-y", null);
+      document.documentElement.style.setProperty("--modal-animation-speed", null);
+      document.documentElement.style.setProperty("--modal-animation", null);
+      document.documentElement.style.setProperty("--modal-slide-out-distance-x", null);
+      document.documentElement.style.setProperty("--modal-slide-out-distance-y", null);
+    }
+
+    if(!enableAnimation) {
+      unsetAnimationStyles();
+    }
+  }, [enableAnimation])
 
   const backdropClickHandler = (e: React.MouseEvent<HTMLDialogElement>) => {
     if (e.target === dialogRef.current) {
