@@ -13,7 +13,7 @@ All styles written in CSS and are in Modal.css
 
 ## Demo
 
-Coming Soon
+https://joseerobless.github.io/
 
 ## Usage
 
