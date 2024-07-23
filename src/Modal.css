@@ -1,0 +1,109 @@
+.dialog-modal {
+  animation: var(--modal-animation) var(--modal-animation-speed) forwards;
+  width: 400px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-modal--fullscreen {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.dialog-modal__close-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #00000091;
+  }
+}
+
+.dialog-modal__close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+@keyframes modalSlideInBottom {
+  from {
+    transform: translateY(var(--modal-slide-in-distance-y));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideInTop {
+  from {
+    transform: translateY(var(--modal-slide-in-distance-y));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideInLeft {
+  from {
+    transform: translateX(var(--modal-slide-in-distance-x));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalSlideInRight {
+  from {
+    transform: translateX(var(--modal-slide-in-distance-x));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalSlideOutBottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--modal-slide-out-distance-y));
+  }
+}
+
+@keyframes modalSlideOutTop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--modal-slide-out-distance-y));
+  }
+}
+
+@keyframes modalSlideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--modal-slide-out-distance-x));
+  }
+}
+
+@keyframes modalSlideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--modal-slide-out-distance-x));
+  }
+}
