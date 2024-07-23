@@ -46,4 +46,11 @@ Default.args = {
   header: <h2>Welcome to my modal</h2>,
   onClose: fn(),
   showCloseButton: true,
+  animationOptions: {
+    direction: "left",
+    speed: "1000ms",
+    closeDirections: {
+      left: "modalSlideOutBottom",
+    },
+  }
 }
